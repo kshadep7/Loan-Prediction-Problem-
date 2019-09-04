@@ -6,11 +6,10 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
-
 def apicall():
     
     #pandas dataframe will be sent from this apicall
-    
+    print('Hello! the server app is working at this point.')
     try:
         testJson = request.get_json()
         test = pd.read_json(path_or_buf=testJson, orient= 'records')
